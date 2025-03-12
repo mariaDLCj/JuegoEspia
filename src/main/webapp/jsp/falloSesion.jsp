@@ -12,14 +12,21 @@
         <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-
+        <script src="${contexto}/JS/fecha.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <script src="${contexto}/JS/autodestruir.js" defer></script>
+        <meta http-equiv="refresh" content="5; url=${contexto}/FrontController">
     </head>
 
     <body>
         <!-- Cabecera con el menú de navegación  -->
         <div class="container d-flex flex-column  justify-content-center align-items-center">
-            <h2 class="shadow-sm sombra-texto text-center mb-4 mt-5">Intento Fallido</span></h2>
-            <h5 class="shadow-sm sombra-texto text-center mb-4 mt-5">Autodestrucción en :<span id="autodestruir"></span></h5>
+            <h2 class="shadow-sm sombra-texto text-center mb-3 mt-5 titulos 
+                tamanioLetras">ESPÍA DETECTADO</h2>
+            <h4 class="shadow-sm sombra-texto text-center mb-3 mt-5 titulos 
+                tamanioLetras">Erradicanción Inminente</h4>
+            <h5 class="shadow-sm sombra-texto text-center mb-4 mt-5 tamanioLetra">Autodestrucción en :<span id="autodestruir">4</span></h5>
         </div>
     </body>
 </html>

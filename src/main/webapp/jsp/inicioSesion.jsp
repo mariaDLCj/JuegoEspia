@@ -18,14 +18,15 @@
     <body>
         <!-- Cabecera con el menú de navegación  -->
         <div class="container d-flex flex-column  justify-content-center align-items-center mt-5">
-            <h2 class="shadow-sm sombra-texto text-center mb-3 mt-5">Introduzca código secreto</span></h2>
+            <h2 class="shadow-sm sombra-texto text-center mb-3 mt-5 titulos 
+                tamanioLetras">Introduzca código secreto</span></h2>
 
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <form method="post" action="${contexto}/GestionController">
 
-                        <h4 class="display-2 lead shadow-sm sombra-texto legibilidad text-center titulos parpadeoEfecto">
-                            ${sessionScope.usuario.frase}
+                        <h4 class="display-2 lead shadow-sm sombra-texto legibilidad text-center titulos parpadeoEfecto grandesLetras">
+                            ${sessionScope.fraseCifrada}
                         </h4>
 
                         <div class="mb-5">
@@ -35,7 +36,7 @@
 
                         <div class="mb-5">
                             <label class="form-label">Código</label>
-                            <input type="text" name="password" value="${sessionScope.usuario.codigo}" id="codigo" class="form-control tamanioLetras">
+                            <input type="text" name="codigo" value="${sessionScope.usuario.codigo}" id="codigo" class="form-control tamanioLetras">
                         </div>
 
                         <div class="d-flex justify-content-center gap-2 mb-4">

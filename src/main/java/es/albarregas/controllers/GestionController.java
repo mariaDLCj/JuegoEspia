@@ -42,21 +42,17 @@ public class GestionController extends HttpServlet {
             throws ServletException, IOException {
         String url = "/jsp/falloSesion.jsp";
         if (request.getParameter("confirmar") != null) {
-            String codigoUsuario = request.getParameter("password");
+            String codigoUsuario = request.getParameter("codigo");
             Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-            if (codigoUsuario.equalsIgnoreCase(usuario.getPassword()) ) {
+            if (codigoUsuario.equalsIgnoreCase(usuario.getCodigo()) ) {
                 url = "/jsp/aciertoSesion.jsp";
             }
         }
 
         if (request.getParameter("enviar") != null) {
             String emailDestino = request.getParameter("destinatario");
-            Usuario usuario = (Usuario) request.getSession().getAttribute("usuario");
-            String emailOrigen = usuario.getEmail();
             String mensajeFormulario = request.getParameter("mensaje");
-            String contrasenia = usuario.getPassword();
-            Utilidades.enviarMensaje(emailOrigen, contrasenia, emailDestino, mensajeFormulario);
-
+            Utilidades.enviarMensaje("pruebaappjuego@gmail.com", "nhxfcstmqnrvjhxo", emailDestino, mensajeFormulario);
             url = "/index.jsp";
         }
 

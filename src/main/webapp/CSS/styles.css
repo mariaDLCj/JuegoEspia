@@ -133,9 +133,6 @@ body {
     animation: calaveraAnimacion 2s infinite ease-in-out;
 }
 
-
-
-
 .div-Cartas{
     margin:0px 100px 0px 30px !important;
 }
@@ -223,4 +220,12 @@ h3{
 
 .frase{
     font-size: 35px;
+}
+
+.oculto{
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.grandesLetras{
+    font-size: 60px !important;
 }

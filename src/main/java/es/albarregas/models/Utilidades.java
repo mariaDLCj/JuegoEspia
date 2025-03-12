@@ -1,4 +1,3 @@
-
 package es.albarregas.models;
 
 import java.util.Enumeration;
@@ -7,28 +6,29 @@ import java.util.Properties;
 import javax.servlet.http.HttpServletRequest;
 import javax.mail.*;
 import javax.mail.internet.*;
-import com.sun.mail.smtp.*;
+
+
 /**
  *
  * @author Maria
  */
 public class Utilidades {
-    
-    public static Boolean campoVacio(Enumeration <String> nombres,List <String> camposOpcionales, HttpServletRequest request){
+
+    public static Boolean campoVacio(Enumeration<String> nombres, List<String> camposOpcionales, HttpServletRequest request) {
         Boolean vacio = false;
-          while (nombres.hasMoreElements()) {
-                String nombre = nombres.nextElement();
-                String valor = request.getParameter(nombre);
-                if (valor.isEmpty() && !camposOpcionales.contains(nombre)) {
-                    vacio = true;
-                }
+        while (nombres.hasMoreElements()) {
+            String nombre = nombres.nextElement();
+            String valor = request.getParameter(nombre);
+            if (valor.isEmpty() && !camposOpcionales.contains(nombre)) {
+                vacio = true;
             }
-            
-           return vacio;
+        }
+
+        return vacio;
     }
 
-    public static String devolverCifradoCesar(String mensajeACifrar){
-        char [] alfabeto = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    public static String devolverCifradoCesar(String mensajeACifrar) {
+        char[] alfabeto = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
         StringBuilder mensajeCifrado = new StringBuilder();
 
         for (int i = 0; i < mensajeACifrar.length(); i++) {
@@ -48,7 +48,7 @@ public class Utilidades {
         return mensajeCifrado.toString();
     }
 
-    public static void enviarMensaje(final String emailMensajero, final String contrasenia, final String emailDestinatario, String mensaje){
+    public static void enviarMensaje(final String emailMensajero, final String contrasenia, final String emailDestinatario, String mensaje) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -57,10 +57,11 @@ public class Utilidades {
 
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(emailMensajero, contrasenia);
-                    }
-                });
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(emailMensajero, contrasenia);
+            }
+        });
 
         try {
             Message mensajeManager = new MimeMessage(session);
@@ -77,4 +78,5 @@ public class Utilidades {
             throw new RuntimeException("Error al enviar el correo: " + e.getMessage(), e);
         }
     }
+
 }

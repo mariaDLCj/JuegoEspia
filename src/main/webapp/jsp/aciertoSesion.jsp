@@ -15,25 +15,29 @@
     </head>
 
     <body>
-        <!-- Cabecera con el menú de navegación  -->
-        <div class="container d-flex flex-column  justify-content-center align-items-center">
-            <h2 class="shadow-sm sombra-texto text-center mb-4 mt-5">Introduzca código secreto</span></h2>
+        <div class="container d-flex flex-column  justify-content-center align-items-center mt-5">
+            <h2 class="shadow-sm sombra-texto text-center mb-3 mt-5 titulos 
+                tamanioLetras">Introduzca código secreto</span></h2>
 
-            <div class="row justify-content-center formulario-bg">
-                <div class="col-lg-8">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
                     <form method="post" action="${contexto}/GestionController">
 
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Destinatario</label>
-                            <input type="email" name="destinatario" value="" id="destinatario" class="form-control">
+                        <h4 class="display-2 lead shadow-sm sombra-texto legibilidad text-center titulos parpadeoEfecto oculto grandesLetras">
+                            ${sessionScope.usuario.frase}
+                        </h4>
+
+                        <div class="mb-5">
+                            <label class="form-label">Destinatario</label>
+                            <input type="text" name="destinatario" value="" id="destinatario" class="form-control tamanioLetras">
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-5">
                             <label class="form-label">Mensaje</label>
-                            <input type="text" name="mensaje" value="" id="mensaje" class="form-control">
+                            <input type="text" name="mensaje" value="" id="mensaje" class="form-control tamanioLetras">
                         </div>
 
-                        <div class="d-flex justify-content-center gap-2">
+                        <div class="d-flex justify-content-center gap-2 mb-5">
                             <input type="submit" class="btn btn-highlight w-100" name="enviar" value="Enviar" />
                             <input type="submit" class="btn btn-highlight w-100" value="Cancelar" name="cancelar" />
                         </div>

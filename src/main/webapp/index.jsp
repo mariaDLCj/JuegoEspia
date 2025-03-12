@@ -13,7 +13,6 @@
         <c:import url="/INC/meta.inc"/>
         <link rel="stylesheet" type="text/css" href="${applicationScope.bootstrap}"/>
         <link rel="stylesheet" type="text/css" href="${applicationScope.estilo}"/>
-        <script src="${contexto}/JS/fecha.js" defer></script>
         <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
