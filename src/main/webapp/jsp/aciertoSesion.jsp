@@ -16,25 +16,23 @@
 
     <body>
         <div class="container d-flex flex-column  justify-content-center align-items-center mt-5">
+            <img src="${applicationScope.contexto}/IMG/IconoEsquina.png" alt="" class="align-self-end imgEsquina"/>
+
             <h2 class="shadow-sm sombra-texto text-center mb-3 mt-5 titulos 
                 tamanioLetras">Introduzca código secreto</span></h2>
 
             <div class="row justify-content-center">
                 <div class="col-lg-12">
-                    <form method="post" action="${contexto}/GestionController">
-
-                        <h4 class="display-2 lead shadow-sm sombra-texto legibilidad text-center titulos parpadeoEfecto oculto grandesLetras">
-                            ${sessionScope.usuario.frase}
-                        </h4>
+                    <form method="post" action="${contexto}/GestionController" class="mb-5">
 
                         <div class="mb-5">
                             <label class="form-label">Destinatario</label>
-                            <input type="text" name="destinatario" value="" id="destinatario" class="form-control tamanioLetras">
+                            <input type="text" name="destinatario" value="" id="destinatario" class="form-control tamanioLetras anchoInput">
                         </div>
 
                         <div class="mb-5">
                             <label class="form-label">Mensaje</label>
-                            <input type="text" name="mensaje" value="" id="mensaje" class="form-control tamanioLetras">
+                            <input type="text" name="mensaje" value="" id="mensaje" class="form-control tamanioLetras anchoInput">
                         </div>
 
                         <div class="d-flex justify-content-center gap-2 mb-5">

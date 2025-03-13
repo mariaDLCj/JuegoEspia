@@ -16,7 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
-        <meta http-equiv="refresh" content="1; url=${contexto}/FrontController">
+        <meta http-equiv="refresh" content="0; url=${contexto}/FrontController">
 
     </head>
 
