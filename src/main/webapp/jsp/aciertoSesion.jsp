@@ -12,6 +12,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <script src="${contexto}/JS/scriptAudioAmbiente.js" defer></script>
+        <script src="${contexto}/JS/scriptSonidoTecla.js" defer></script>
     </head>
 
     <body>

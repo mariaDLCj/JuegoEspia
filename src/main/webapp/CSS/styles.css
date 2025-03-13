@@ -235,6 +235,30 @@ h3{
     width: 90px;
 }
 
+.imgPeq{
+    height: 90px;
+    width: 90px;
+}
+
+
 .anchoInput{
     width: 500px !important;
+}
+
+.transparente{
+    display: none;
+}
+
+.modal-content {
+    border: none;
+}
+.modal-header, .modal-footer {
+    border: none;
+}
+.modal-body {
+    text-align: center;
+}
+
+.mt-6{
+    margin-top:150px;
 }

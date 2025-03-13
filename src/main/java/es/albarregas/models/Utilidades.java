@@ -1,8 +1,6 @@
 package es.albarregas.models;
 
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -48,6 +46,66 @@ public class Utilidades {
         return mensajeCifrado.toString();
     }
 
+    // Función para reemplazar una palabra cifrada por su palabra original en la frase
+    public static String reemplazarPalabraConOriginal(String fraseCifrada, String fraseOriginal) {
+        String[] palabrasCifradas = fraseCifrada.split(" ");
+        String[] palabrasOriginales = fraseOriginal.split(" ");
+        List<String> posicionesUsadas = new ArrayList<>();
+
+        List<String> palabrasCifradasList = new ArrayList<>();
+        for (String palabra : palabrasCifradas) {
+            palabrasCifradasList.add(palabra);
+        }
+
+        if (palabrasCifradasList.isEmpty()) {
+            return fraseOriginal;
+        }
+
+        // Elegimos una palabra aleatoria de las palabras cifradas
+        Random rand = new Random();
+        String palabraCifradaAleatoria = palabrasCifradasList.get(rand.nextInt(palabrasCifradasList.size()));
+
+        while (palabraCifrada(posicionesUsadas, palabraCifradaAleatoria)) {
+            rand = new Random();
+            palabraCifradaAleatoria = palabrasCifradasList.get(rand.nextInt(palabrasCifradasList.size()));
+        }
+
+        String palabraOriginal = buscarPalabraOriginal(palabraCifradaAleatoria, palabrasCifradas, palabrasOriginales);
+
+        // Reemplazamos la palabra cifrada por su palabra original
+        StringBuilder nuevaFrase = new StringBuilder();
+        for (int i = 0; i < palabrasCifradas.length; i++) {
+            if (palabrasCifradas[i].equals(palabraCifradaAleatoria)) {
+                nuevaFrase.append(palabraOriginal.toUpperCase()).append(" ");
+
+                posicionesUsadas.add(palabraCifradaAleatoria);
+            } else {
+                nuevaFrase.append(palabrasCifradas[i]).append(" ");
+            }
+        }
+
+        return nuevaFrase.toString().trim();
+    }
+
+    // Función que busca la palabra original correspondiente a la palabra cifrada
+    private static String buscarPalabraOriginal(String palabraCifrada, String[] palabrasCifradas, String[] palabrasOriginales) {
+        for (int i = 0; i < palabrasCifradas.length; i++) {
+            if (palabrasCifradas[i].equals(palabraCifrada)) {
+                return palabrasOriginales[i];
+            }
+        }
+        return palabraCifrada;
+    }
+
+    private static boolean palabraCifrada(List<String> posicionesUsadas, String palabraCifrada) {
+        for (int i = 0; i < posicionesUsadas.size(); i++) {
+            if (posicionesUsadas.get(i).equalsIgnoreCase(palabraCifrada)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void enviarMensaje(final String emailMensajero, final String contrasenia, final String emailDestinatario, String mensaje) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -57,11 +115,11 @@ public class Utilidades {
 
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(emailMensajero, contrasenia);
-            }
-        });
+                    @Override
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(emailMensajero, contrasenia);
+                    }
+                });
 
         try {
             Message mensajeManager = new MimeMessage(session);
