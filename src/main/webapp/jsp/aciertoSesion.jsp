@@ -21,7 +21,7 @@
             <img src="${applicationScope.contexto}/IMG/IconoEsquina.png" alt="" class="align-self-end imgEsquina"/>
 
             <h2 class="shadow-sm sombra-texto text-center mb-3 mt-5 titulos 
-                tamanioLetras">Introduzca código secreto</span></h2>
+                tamanioLetras">Escriba su mensaje</span></h2>
 
             <div class="row justify-content-center">
                 <div class="col-lg-12">

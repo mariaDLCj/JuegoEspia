@@ -1,11 +1,12 @@
 let tiempoRestante = 3;
-const autodestruccion = document.getElementById("autodestruir");
 
-let intervalo = setInterval(function() {
-    autodestruccion.textContent=tiempoRestante;
+let intervalo = setInterval(function () {
+    document.getElementById("autodestruir").textContent = tiempoRestante;
     tiempoRestante--;
-    
-    if (tiempoRestante < 0) {
+
+    if (tiempoRestante === 0) {
+        document.getElementById("gif").classList.remove("hidden");
+        document.getElementById("autodestruir").textContent = 0;
         clearInterval(intervalo);
     }
-}, 1000);
+}, 1000);  

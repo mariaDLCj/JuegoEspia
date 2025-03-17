@@ -78,7 +78,7 @@
 
                         <div class="mb-5">
                             <label class="form-label">Código</label>
-                            <input type="text" name="codigo" value="${sessionScope.usuario.codigo}" id="codigo" class="form-control anchoInput tamanioLetras">
+                            <input type="text" name="codigo" value="" id="codigo" class="form-control anchoInput tamanioLetras">
                         </div>
 
                         <div class="d-flex justify-content-center gap-2 mb-4">
@@ -86,7 +86,6 @@
                             <input type="submit" class="btn btn-highlight w-100 tamanioLetras" value="Pista" name="pista" />
                             <input type="submit" class="btn btn-highlight w-100 tamanioLetras" value="Cancelar" name="cancelar" />
                         </div>
-
                     </form>
                 </div>
             </div>

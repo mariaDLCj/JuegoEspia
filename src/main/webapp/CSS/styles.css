@@ -260,5 +260,14 @@ h3{
 }
 
 .mt-6{
-    margin-top:150px;
+    margin-top:140px;
+}
+
+.filtro{
+    display: block;
+    filter: hue-rotate(90deg);
+}
+
+.hidden {
+    display: none;
 }
